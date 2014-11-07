@@ -11,6 +11,9 @@ echo "Check system"
 which mount
 mkdir xy
 mount none xy -t proc && umount xy
+echo "trying with bind mount"
+
+mount /proc xy -o bind && umount xy
 
 echo "Now running as root..."
 
