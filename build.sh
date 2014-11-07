@@ -13,3 +13,10 @@ if [ ! -f /usr/bin/debootstrap ]; then
   apt-get -qq update && apt-get -qq -y install debootstrap
 fi
 
+mkdir target
+
+# Debian Wheezy
+# http://l3net.wordpress.com/2013/11/03/debian-virtualization-lxc-debootstrap-filesystem/
+
+mkdir -p target/wheezy/rootfs
+debootstrap --include=lxc --arch=amd64 wheezy target/wheezy/rootfs
