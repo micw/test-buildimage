@@ -6,6 +6,12 @@ if [ $UID != 0 ]; then
   exit $?
 fi
 
+echo "Check system"
+
+which mount
+mkdir xy
+mount none xy -t proc && umount xy
+
 echo "Now running as root..."
 
 if [ ! -f /usr/bin/debootstrap ]; then
