@@ -10,6 +10,6 @@ echo "Now running as root..."
 
 if [ ! -f /usr/bin/debootstrap ]; then
   echo "Installing debootstrap"
-  apt-get update && apt-get -y install debootstrap
+  apt-get -qq update && apt-get -qq -y install debootstrap
 fi
 
