@@ -1,2 +1,2 @@
 language: python
-script: "./checkenv.sh"
+script: "./build.sh"
