@@ -5,6 +5,8 @@ if [ $UID != 0 ]; then
   sudo $0
   exit $?
 fi
+echo "Now running as root..."
+
 
 echo "Check system"
 
@@ -14,8 +16,6 @@ mount none xy -t proc && umount xy
 echo "trying with bind mount"
 
 mount /proc xy -o bind && umount xy
-
-echo "Now running as root..."
 
 if [ ! -f /usr/bin/debootstrap ]; then
   echo "Installing debootstrap"
